@@ -1,0 +1,137 @@
+body {
+
+}
+
+/*Game Board*/
+
+section {
+
+}
+
+.container {
+	width: 610px;
+	height: 610px;
+	position: relative;
+}
+
+h1 {
+	font-family: 'Arial', sans-serif;
+	font-size: 30px;
+	text-align: center;
+}
+
+/*Board Cells*/
+
+div {
+
+}
+
+.gameCell {
+	width: 200px;
+	height: 200px;
+}
+
+#cell1 {
+	background-color: #333;
+	position: absolute;
+	top: 40px;
+	left: 0;
+}
+
+#cell2 {
+	background-color: #333;
+	position: absolute;
+	top: 40px;
+	left: 210px;
+}
+
+#cell3 {
+	background-color: #333;
+	position: absolute;
+	top: 40px;
+	left: 420px;
+}
+
+#cell4 {
+	background-color: #333;
+	position: absolute;
+	top: 250px;
+	left: 0;
+}
+
+#cell5 {
+	background-color: #333;
+	position: absolute;
+	top: 250px;
+	left: 210px;
+}
+
+#cell6 {
+	background-color: #333;
+	position: absolute;
+	top: 250px;
+	left: 420px;
+}
+
+#cell7 {
+	background-color: #333;
+	position: absolute;
+	top: 460px;
+	left: 0;
+}
+
+#cell8 {
+	background-color: #333;
+	position: absolute;
+	top: 460px;
+	left: 210px;
+}
+
+#cell9 {
+	background-color: #333;
+	position: absolute;
+	top: 460px;
+	left: 420px;
+}
+
+/*Reset Button*/
+
+.button {
+	width: 100%;
+	position: absolute;
+	top: 680px;
+	left: 210px;
+}
+
+button:focus {
+	outline: 0;
+}
+
+#resetButton {
+	border-radius: 5px;
+	background-color: #fff;
+	width: 200px;
+	height: 30px;
+}
+
+.printX {
+	font-size: 40px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.printO {
+	font-size: 40px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.printRed {
+	color: red;
+	font-size: 40px;
+	background-color: blue;
+}
+
+.printBlue {
+	background-color: #114;
+}

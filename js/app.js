@@ -171,13 +171,8 @@ function checkWinX() {
 	}
 	else if (cell3.textContent === selectorX && cell5.textContent === selectorX && cell7.textContent === selectorX) {
 		alert("X wins");
-	} else {
-
 	}
-};
-
-function checkWinO() {
-	if (cell1.textContent === selectorO && cell2.textContent === selectorO && cell3.textContent === selectorO) {
+	else if (cell1.textContent === selectorO && cell2.textContent === selectorO && cell3.textContent === selectorO) {
 		alert("O wins");
 	}
 	else if (cell4.textContent === selectorO && cell5.textContent === selectorO && cell6.textContent === selectorO) {
@@ -201,9 +196,40 @@ function checkWinO() {
 	else if (cell3.textContent === selectorO && cell5.textContent === selectorO && cell7.textContent === selectorO) {
 		alert("O wins");
 	} else {
-		
+		// alert("It's a tie");
 	}
 };
+
+// function checkWinO() {
+// 	if (cell1.textContent === selectorO && cell2.textContent === selectorO && cell3.textContent === selectorO) {
+// 		alert("O wins");
+// 	}
+// 	else if (cell4.textContent === selectorO && cell5.textContent === selectorO && cell6.textContent === selectorO) {
+// 		alert("O wins");
+// 	}
+// 	else if (cell7.textContent === selectorO && cell8.textContent === selectorO && cell9.textContent === selectorO) {
+// 		alert("O wins");
+// 	}
+// 	else if (cell1.textContent === selectorO && cell4.textContent === selectorO && cell7.textContent === selectorO) {
+// 		alert("O wins");
+// 	}
+// 	else if (cell2.textContent === selectorO && cell5.textContent === selectorO && cell8.textContent === selectorO) {
+// 		alert("O wins");
+// 	}
+// 	else if (cell3.textContent === selectorO && cell6.textContent === selectorO && cell9.textContent === selectorO) {
+// 		alert("O wins");
+// 	}
+// 	else if (cell1.textContent === selectorO && cell5.textContent === selectorO && cell9.textContent === selectorO) {
+// 		alert("O wins");
+// 	}
+// 	else if (cell3.textContent === selectorO && cell5.textContent === selectorO && cell7.textContent === selectorO) {
+// 		alert("O wins");
+// 	} else {
+		
+// 	}
+// };
+
+
 
 // Reset Button Functions
 

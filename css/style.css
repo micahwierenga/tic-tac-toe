@@ -12,6 +12,7 @@ section {
 	width: 610px;
 	height: 610px;
 	position: relative;
+	background-color: #fff;
 }
 
 h1 {
@@ -129,7 +130,8 @@ button:focus {
 .printRed {
 	color: red;
 	font-size: 40px;
-	background-color: blue;
+	text-align: center;
+	vertical-align: middle;
 }
 
 .printBlue {

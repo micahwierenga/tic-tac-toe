@@ -1,43 +1,14 @@
-// need an array to track moves
-
-// need a variable for each square
-
-// on click, if odd click, append X to cell, else append O to square
-
-// on click, create div with x or o in it
-
-// if it's the odd number in the array, makeX, else makeO
-
-// on click:
-// 1. determine if it is an odd click or even click
-// does the index number of the click have a remainder when divided by 2 or not
-// 2. if even, print X, if odd, print O
-// 3. once a click has been made, store that click in an empty array
-// 4. if cell1 === X && cell2 === X && cell3 === X, X wins
-	// if cell4 === X && cell5 === X && cell6 === X, X wins
-	// if cell7 === X && cell8 === X && cell9 === X, X wins
-	// if cell1 === X && cell4 === X && cell7 === X, X wins
-	// if cell2 === X && cell5 === X && cell8 === X, X wins
-	// if cell3 === X && cell6 === X && cell9 === X, X wins
-	// if cell1 === X && cell5 === X && cell9 === X, X wins
-	// if cell3 === X && cell5 === X && cell7 === X, X wins
-
-	// if cell1 === O && cell2 === O && cell3 === O, O wins
-	// if cell4 === O && cell5 === O && cell6 === O, O wins
-	// if cell7 === O && cell8 === O && cell9 === O, O wins
-	// if cell1 === O && cell4 === O && cell7 === O, O wins
-	// if cell2 === O && cell5 === O && cell8 === O, O wins
-	// if cell3 === O && cell6 === O && cell9 === O, O wins
-	// if cell1 === O && cell5 === O && cell9 === O, O wins
-	// if cell3 === O && cell5 === O && cell7 === O, O wins
-
-
+// X and O Selectors
 
 var selectorX = "X";
 
 var selectorO = "O";
 
+// Empty Array
+
 var moveTracker = [];
+
+// Make X and O Functions
 
 function makeX() {
 	var x = document.getElementsByClassName('gameCell');
@@ -50,6 +21,8 @@ function makeO() {
 	o.textContent = selectorO;
 }
 
+// Print X and O Function
+
 function makeMove() {
 if (moveTracker.length % 2 === 0) {
 	makeX();
@@ -59,6 +32,8 @@ if (moveTracker.length % 2 === 0) {
 	moveTracker.push(selectorO);
 }
 }
+
+// Cell Functions
 
 var cell1 = document.getElementById('cell1');
 var clickCell1 = cell1.addEventListener("click", function() {
@@ -177,6 +152,8 @@ checkWinX();
 checkWinO();
 });
 
+// Check Win Functions
+
 function checkWinX() {
 	if (cell1.textContent === selectorX && cell2.textContent === selectorX && cell3.textContent === selectorX) {
 		alert("O wins");
@@ -202,7 +179,7 @@ function checkWinX() {
 	else if (cell3.textContent === selectorX && cell5.textContent === selectorX && cell7.textContent === selectorX) {
 		alert("X wins");
 	} else {
-		console.log("No one has won yet");
+
 	}
 };
 
@@ -231,16 +208,15 @@ function checkWinO() {
 	else if (cell3.textContent === selectorO && cell5.textContent === selectorO && cell7.textContent === selectorO) {
 		alert("O wins");
 	} else {
-		console.log("No one has won yet");
+		
 	}
 };
 
+// Reset Button Functions
+
 function resetBoard() {
 	moveTracker = [];
-	console.log('reset?')
-}
 
-function clearCells() {
 	var clearCell1 = document.getElementById('cell1').innerHTML = "";
 	var clearCell2 = document.getElementById('cell2').innerHTML = "";
 	var clearCell3 = document.getElementById('cell3').innerHTML = "";
@@ -253,10 +229,86 @@ function clearCells() {
 }
 
 var getResetButton = document.getElementById('resetButton');
-var resetButton = getResetButton.addEventListener("click", function() {
-	resetBoard();
-	clearCells();
-});
+var resetButton = getResetButton.addEventListener("click", resetBoard);
 
 
+// function resetBoard() {
+// 	moveTracker = [];
+// }
 
+// function clearCells() {
+// 	var clearCell1 = document.getElementById('cell1').innerHTML = "";
+// 	var clearCell2 = document.getElementById('cell2').innerHTML = "";
+// 	var clearCell3 = document.getElementById('cell3').innerHTML = "";
+// 	var clearCell4 = document.getElementById('cell4').innerHTML = "";
+// 	var clearCell5 = document.getElementById('cell5').innerHTML = "";
+// 	var clearCell6 = document.getElementById('cell6').innerHTML = "";
+// 	var clearCell7 = document.getElementById('cell7').innerHTML = "";
+// 	var clearCell8 = document.getElementById('cell8').innerHTML = "";
+// 	var clearCell9 = document.getElementById('cell9').innerHTML = "";
+// }
+
+// var getResetButton = document.getElementById('resetButton');
+// var resetButton = getResetButton.addEventListener("click", function() {
+// 	resetBoard();
+// 	clearCells();
+// });
+
+
+// Notes
+
+// need an array to track moves
+
+// need a variable for each square
+
+// on click, if odd click, append X to cell, else append O to square
+
+// on click, create div with x or o in it
+
+// if it's the odd number in the array, makeX, else makeO
+
+// on click:
+// 1. determine if it is an odd click or even click
+// does the index number of the click have a remainder when divided by 2 or not
+// 2. if even, print X, if odd, print O
+// 3. once a click has been made, store that click in an empty array
+// 4. if cell1 === X && cell2 === X && cell3 === X, X wins
+	// if cell4 === X && cell5 === X && cell6 === X, X wins
+	// if cell7 === X && cell8 === X && cell9 === X, X wins
+	// if cell1 === X && cell4 === X && cell7 === X, X wins
+	// if cell2 === X && cell5 === X && cell8 === X, X wins
+	// if cell3 === X && cell6 === X && cell9 === X, X wins
+	// if cell1 === X && cell5 === X && cell9 === X, X wins
+	// if cell3 === X && cell5 === X && cell7 === X, X wins
+
+	// if cell1 === O && cell2 === O && cell3 === O, O wins
+	// if cell4 === O && cell5 === O && cell6 === O, O wins
+	// if cell7 === O && cell8 === O && cell9 === O, O wins
+	// if cell1 === O && cell4 === O && cell7 === O, O wins
+	// if cell2 === O && cell5 === O && cell8 === O, O wins
+	// if cell3 === O && cell6 === O && cell9 === O, O wins
+	// if cell1 === O && cell5 === O && cell9 === O, O wins
+	// if cell3 === O && cell5 === O && cell7 === O, O wins
+
+// Medium
+// print x's and o's on board
+// if certain patterns achieved, declare winner
+// reset
+
+// Low
+// if a div is clicked, print x or o and change color
+// 1. make each div clickable
+// 2. when they are clicked, display a red X or green O
+// 2a. create an array that holds/records each click
+// 2b. if the array index is even, display red X, but if the array index is odd, display green O
+// 2c. test to see if the array index is even (for loop?)
+
+// if a certain pattern is achieved, declare winner
+
+// reset the board
+// 1. clear array
+
+
+// print character in whatever cell is clicked on
+
+// if cell is clicked on print char

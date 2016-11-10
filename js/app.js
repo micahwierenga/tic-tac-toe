@@ -8,41 +8,18 @@ var selectorO = "O";
 
 var moveTracker = [];
 
-// Make X and O Functions
-
-function makeX() {
-	var x = document.getElementsByClassName('gameCell');
-	x.textContent = selectorX;
-	x.setAttribute("class", "printX");
-}
-
-function makeO() {
-	var o = document.getElementById('gameCell');
-	o.textContent = selectorO;
-}
-
-// Print X and O Function
-
-function makeMove() {
-if (moveTracker.length % 2 === 0) {
-	makeX();
-	moveTracker.push(selectorX);
-} else {
-	makeO();
-	moveTracker.push(selectorO);
-}
-}
-
 // Cell Functions
 
 var cell1 = document.getElementById('cell1');
 var clickCell1 = cell1.addEventListener("click", function() {
 	if (moveTracker.length % 2 === 0) {
 	cell1.textContent = selectorX;
+	cell1.setAttribute("class", "printRed");
 	moveTracker.push(selectorX);
 } else {
 	cell1.textContent = selectorO;
 	moveTracker.push(selectorO);
+	cell1.setAttribute("class", "printBlue");
 }
 checkWinX();
 checkWinO();
@@ -53,9 +30,11 @@ var clickCell2 = cell2.addEventListener("click", function() {
 	if (moveTracker.length % 2 === 0) {
 	cell2.textContent = selectorX;
 	moveTracker.push(selectorX);
+	cell2.setAttribute("class", "printRed");
 } else {
 	cell2.textContent = selectorO;
 	moveTracker.push(selectorO);
+	cell2.setAttribute("class", "printBlue");
 }
 checkWinX();
 checkWinO();
@@ -66,9 +45,11 @@ var clickCell3 = cell3.addEventListener("click", function() {
 	if (moveTracker.length % 2 === 0) {
 	cell3.textContent = selectorX;
 	moveTracker.push(selectorX);
+	cell3.setAttribute("class", "printRed");
 } else {
 	cell3.textContent = selectorO;
 	moveTracker.push(selectorO);
+	cell3.setAttribute("class", "printBlue");
 }
 checkWinX();
 checkWinO();
@@ -79,9 +60,11 @@ var clickCell4 = cell4.addEventListener("click", function() {
 	if (moveTracker.length % 2 === 0) {
 	cell4.textContent = selectorX;
 	moveTracker.push(selectorX);
+	cell4.setAttribute("class", "printRed");
 } else {
 	cell4.textContent = selectorO;
 	moveTracker.push(selectorO);
+	cell4.setAttribute("class", "printBlue");
 }
 checkWinX();
 checkWinO();
@@ -92,9 +75,11 @@ var clickCell5 = cell5.addEventListener("click", function() {
 	if (moveTracker.length % 2 === 0) {
 	cell5.textContent = selectorX;
 	moveTracker.push(selectorX);
+	cell5.setAttribute("class", "printRed");
 } else {
 	cell5.textContent = selectorO;
 	moveTracker.push(selectorO);
+	cell5.setAttribute("class", "printBlue");
 }
 checkWinX();
 checkWinO();
@@ -105,9 +90,11 @@ var clickCell6 = cell6.addEventListener("click", function() {
 	if (moveTracker.length % 2 === 0) {
 	cell6.textContent = selectorX;
 	moveTracker.push(selectorX);
+	cell6.setAttribute("class", "printRed");
 } else {
 	cell6.textContent = selectorO;
 	moveTracker.push(selectorO);
+	cell6.setAttribute("class", "printBlue");
 }
 checkWinX();
 checkWinO();
@@ -118,9 +105,11 @@ var clickCell7 = cell7.addEventListener("click", function() {
 	if (moveTracker.length % 2 === 0) {
 	cell7.textContent = selectorX;
 	moveTracker.push(selectorX);
+	cell7.setAttribute("class", "printRed");
 } else {
 	cell7.textContent = selectorO;
 	moveTracker.push(selectorO);
+	cell7.setAttribute("class", "printBlue");
 }
 checkWinX();
 checkWinO();
@@ -131,9 +120,11 @@ var clickCell8 = cell8.addEventListener("click", function() {
 	if (moveTracker.length % 2 === 0) {
 	cell8.textContent = selectorX;
 	moveTracker.push(selectorX);
+	cell8.setAttribute("class", "printRed");
 } else {
 	cell8.textContent = selectorO;
 	moveTracker.push(selectorO);
+	cell8.setAttribute("class", "printBlue");
 }
 checkWinX();
 checkWinO();
@@ -144,9 +135,11 @@ var clickCell9 = cell9.addEventListener("click", function() {
 	if (moveTracker.length % 2 === 0) {
 	cell9.textContent = selectorX;
 	moveTracker.push(selectorX);
+	cell9.setAttribute("class", "printRed");
 } else {
 	cell9.textContent = selectorO;
 	moveTracker.push(selectorO);
+	cell9.setAttribute("class", "printBlue");
 }
 checkWinX();
 checkWinO();
@@ -156,7 +149,7 @@ checkWinO();
 
 function checkWinX() {
 	if (cell1.textContent === selectorX && cell2.textContent === selectorX && cell3.textContent === selectorX) {
-		alert("O wins");
+		alert("X wins");
 	}
 	else if (cell4.textContent === selectorX && cell5.textContent === selectorX && cell6.textContent === selectorX) {
 		alert("X wins");
@@ -214,22 +207,16 @@ function checkWinO() {
 
 // Reset Button Functions
 
-function resetBoard() {
-	moveTracker = [];
-
-	var clearCell1 = document.getElementById('cell1').innerHTML = "";
-	var clearCell2 = document.getElementById('cell2').innerHTML = "";
-	var clearCell3 = document.getElementById('cell3').innerHTML = "";
-	var clearCell4 = document.getElementById('cell4').innerHTML = "";
-	var clearCell5 = document.getElementById('cell5').innerHTML = "";
-	var clearCell6 = document.getElementById('cell6').innerHTML = "";
-	var clearCell7 = document.getElementById('cell7').innerHTML = "";
-	var clearCell8 = document.getElementById('cell8').innerHTML = "";
-	var clearCell9 = document.getElementById('cell9').innerHTML = "";
+function reload() {
+	location.reload();
 }
 
 var getResetButton = document.getElementById('resetButton');
-var resetButton = getResetButton.addEventListener("click", resetBoard);
+var resetButton = getResetButton.addEventListener("click", reload);
+
+// ________________________________________________________
+
+// Discarded Code
 
 
 // function resetBoard() {
@@ -254,6 +241,46 @@ var resetButton = getResetButton.addEventListener("click", resetBoard);
 // 	clearCells();
 // });
 
+
+// Make X and O Functions
+
+// function makeX() {
+// 	var x = document.getElementsByClassName('gameCell');
+// 	x.textContent = selectorX;
+// 	selectorX.setAttribute("class", "printX");
+// }
+
+// function makeO() {
+// 	var o = document.getElementById('gameCell');
+// 	o.textContent = selectorO;
+// }
+
+// // Print X and O Function
+
+// function makeMove() {
+// if (moveTracker.length % 2 === 0) {
+// 	makeX();
+// 	moveTracker.push(selectorX);
+// } else {
+// 	makeO();
+// 	moveTracker.push(selectorO);
+// }
+// }
+
+// function resetBoard() {
+// 	moveTracker = [];
+
+// 	var clearCell1 = document.getElementById('cell1').innerHTML = "";
+// 	var clearCell2 = document.getElementById('cell2').innerHTML = "";
+// 	var clearCell3 = document.getElementById('cell3').innerHTML = "";
+// 	var clearCell4 = document.getElementById('cell4').innerHTML = "";
+// 	var clearCell5 = document.getElementById('cell5').innerHTML = "";
+// 	var clearCell6 = document.getElementById('cell6').innerHTML = "";
+// 	var clearCell7 = document.getElementById('cell7').innerHTML = "";
+// 	var clearCell8 = document.getElementById('cell8').innerHTML = "";
+// 	var clearCell9 = document.getElementById('cell9').innerHTML = "";
+// }
+// ________________________________________________________
 
 // Notes
 
